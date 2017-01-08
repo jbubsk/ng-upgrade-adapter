@@ -1,5 +1,4 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {rootModule} from './ng1/main.component';
+import {upgradeAdapter} from './app.module';
 
-import { AppModule } from './app.module';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
+upgradeAdapter.bootstrap(document.body, [rootModule.name]);

@@ -1,11 +1,14 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule, forwardRef}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent}  from './app.component';
+import {UpgradeAdapter} from '@angular/upgrade';
 
-import { AppComponent }  from './app.component';
+export const upgradeAdapter = new UpgradeAdapter(forwardRef(() => AppModule));
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
